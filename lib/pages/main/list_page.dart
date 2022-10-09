@@ -7,7 +7,7 @@ class ListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.separated(
-        itemCount: 20,
+        itemCount: 10,
         itemBuilder: (context, index) {
           return ListTile(
             onTap: () {

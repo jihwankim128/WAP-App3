@@ -17,12 +17,13 @@ class JoinPage extends StatelessWidget {
           children: [
             Container(
               alignment: Alignment.center,
-              height: 200,
+              height: 100,
               child: Text(
-                "회원가입 페이지",
+                "SIGN UP",
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
+
                 ),
               ),
             ),
@@ -31,7 +32,7 @@ class JoinPage extends StatelessWidget {
               onPressed: () {
                 Get.to(LoginPage());
               },
-              child: Text("ID가 존재하시나요?"),
+              child: Text("Do you have ID?"),
             ),
           ],
         ),
@@ -61,7 +62,7 @@ class JoinPage extends StatelessWidget {
             funValidator: validatePhone(),
           ),
           CustomElevatedButton(
-            text: "승인요청",
+            text: "Approval",
             funPageRoute: () {
               if(_formKey.currentState!.validate()){
                 Get.to(LoginPage());

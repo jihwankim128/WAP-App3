@@ -1,5 +1,7 @@
+// 입력받는 값 조건
 import 'package:validators/validators.dart';
 
+//ex) 201911608 -- 9자리
 Function validateStudentNumber() {
   return (String? value) {
     if (value!.isEmpty)
@@ -8,6 +10,7 @@ Function validateStudentNumber() {
       return "학생번호는 9자리 입니다.";
   };
 }
+
 Function validatePassWord() {
   return (String? value) {
     if (value!.isEmpty)

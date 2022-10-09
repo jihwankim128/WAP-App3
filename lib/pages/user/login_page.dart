@@ -18,9 +18,9 @@ class LoginPage extends StatelessWidget {
           children: [
             Container(
               alignment: Alignment.center,
-              height: 200,
+              height: 100,
               child: Text(
-                "로그인 페이지",
+                "LOGIN",
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
@@ -32,7 +32,7 @@ class LoginPage extends StatelessWidget {
               onPressed: () {
                 Get.to(JoinPage());
               },
-              child: Text("회원가입"),
+              child: Text("SIGN UP"),
             ),
           ],
         ),
@@ -54,7 +54,7 @@ class LoginPage extends StatelessWidget {
             funValidator: validatePassWord(),
           ),
           CustomElevatedButton(
-            text: "로그인",
+            text: "LOGIN",
             funPageRoute: () {
               if (_formKey.currentState!.validate()) {
                 Get.to(HomePage());

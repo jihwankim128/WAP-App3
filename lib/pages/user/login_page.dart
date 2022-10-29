@@ -18,21 +18,27 @@ class LoginPage extends StatelessWidget {
           children: [
             Container(
               alignment: Alignment.center,
-              height: 100,
+              height: 200,
               child: Text(
                 "LOGIN",
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
+
                 ),
               ),
             ),
+
             _LoinForm(),
-            TextButton(
+            Container(
+              width : 250,
+              height : 40,
+              child :TextButton(
               onPressed: () {
                 Get.to(JoinPage());
               },
               child: Text("SIGN UP"),
+            ),
             ),
           ],
         ),
@@ -45,21 +51,34 @@ class LoginPage extends StatelessWidget {
       key: _formKey,
       child: Column(
         children: [
-          CustomTextFormField(
-            hint: "Student Number",
-            funValidator: validateStudentNumber(),
-          ),
-          CustomTextFormField(
+            Container(
+              width:300,
+              height: 50,
+            child : CustomTextFormField(
+              hint: "Student Number", //텍스트 정렬 center
+              funValidator: validateStudentNumber(),
+            ),
+            ),
+          Container(
+            width: 300,
+            height: 50,
+            child : CustomTextFormField(
             hint: "Password",
             funValidator: validatePassWord(),
           ),
-          CustomElevatedButton(
-            text: "LOGIN",
+          ),
+          Container(
+            width : 300,
+            height : 40,
+            margin : EdgeInsets.only(top:20),
+            child : CustomElevatedButton(
+            text: "LOGIN", //로그인 버튼 size 변경 확인
             funPageRoute: () {
               if (_formKey.currentState!.validate()) {
                 Get.to(HomePage());
               }
             },
+          ),
           ),
         ],
       ),

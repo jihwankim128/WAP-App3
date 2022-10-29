@@ -21,6 +21,7 @@ class CustomTextFormField extends StatelessWidget {
 
   Widget _Form() {
     return TextFormField(
+      textAlignVertical: TextAlignVertical.bottom,
       obscureText: hint == "Password" ? true : false,
       validator: funValidator,
       keyboardType: hint == "Student Number"
@@ -35,7 +36,7 @@ class CustomTextFormField extends StatelessWidget {
           : <TextInputFormatter>[],
       decoration: InputDecoration(
         hintText: "$hint",
-      enabledBorder: OutlineInputBorder(
+        enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
         ),
         focusedBorder: OutlineInputBorder(

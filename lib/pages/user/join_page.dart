@@ -17,9 +17,9 @@ class JoinPage extends StatelessWidget {
           children: [
             Container(
               alignment: Alignment.center,
-              height: 100,
+              margin: EdgeInsets.only(top:100),
               child: Text(
-                "SIGN UP",
+                "SIGN UP", // 해당페이지 제목
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
@@ -27,7 +27,10 @@ class JoinPage extends StatelessWidget {
                 ),
               ),
             ),
-            _joinForm(),
+            Container(
+              margin: EdgeInsets.only(top:40),
+              child : _joinForm()
+            ),
             TextButton(
               onPressed: () {
                 Get.to(LoginPage());
@@ -45,29 +48,50 @@ class JoinPage extends StatelessWidget {
       key: _formKey,
       child: Column(
         children: [
-          CustomTextFormField(
-            hint: "Student Number",
-            funValidator: validateStudentNumber(),
+        Container(
+          width : 300,
+          height : 50,
+          child : CustomTextFormField(
+          hint: "Student Number",
+          funValidator: validateStudentNumber(),
           ),
-          CustomTextFormField(
+        ),
+          Container(
+            width : 300,
+            height: 50,
+            child : CustomTextFormField(
             hint: "Password",
             funValidator: validatePassWord(),
           ),
-          CustomTextFormField(
+        ),
+          Container(
+            width: 300,
+            height: 50,
+            child : CustomTextFormField(
             hint: "E-mail",
             funValidator: validateEmail(),
           ),
-          CustomTextFormField(
-            hint: "PhoneNumber",
+          ),
+          Container(
+            width: 300,
+            height: 50,
+            child : CustomTextFormField(
+            hint: "Phone Number",
             funValidator: validatePhone(),
           ),
-          CustomElevatedButton(
+          ),
+          Container(
+            width: 300,
+            height: 40,
+            margin : EdgeInsets.only(top:20),
+            child: CustomElevatedButton(
             text: "Approval",
             funPageRoute: () {
               if(_formKey.currentState!.validate()){
                 Get.to(LoginPage());
               }
             },
+          ),
           ),
         ],
       ),

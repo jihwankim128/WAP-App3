@@ -128,19 +128,8 @@ class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: <Widget>[
-          new IconButton(
-            icon: new Icon(Icons.photo_album),
-            tooltip: 'Hi!',
-            onPressed: () => {Get.to(ListPage())},
-          ),
-        ],
-      ),
-      body: Stack(
-        children: [
-          Positioned(
-            child: Container(
+      appBar: AppBar(),
+      body: Container(
               child: CommentBox(
                 userImage:
                     "https://lh3.googleusercontent.com/a-/AOh14GjRHcaendrf6gU5fPIVd8GIl1OgblrMMvGUoCBj4g=s400",
@@ -152,10 +141,11 @@ class _DetailPageState extends State<DetailPage> {
                         child: Container(
                           width: double.maxFinite,
                           height: 100,
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
+                          decoration : BoxDecoration(
+                            color: const Color(0xff7c94b6),
+                            image: const DecorationImage(
                               image: AssetImage("assets/image/book.jpg"),
+                              fit: BoxFit.cover,
                             ),
                           ),
                         )),
@@ -221,9 +211,6 @@ class _DetailPageState extends State<DetailPage> {
                     const Icon(Icons.send_sharp, size: 30, color: Colors.white),
               ),
             ),
-          ),
-        ],
-      ),
     );
   }
 }

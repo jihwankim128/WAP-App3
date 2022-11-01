@@ -17,7 +17,7 @@ class JoinPage extends StatelessWidget {
           children: [
             Container(
               alignment: Alignment.center,
-              margin: EdgeInsets.only(top:100),
+              margin: EdgeInsets.only(top:60),
               child: Text(
                 "SIGN UP", // 해당페이지 제목
                 style: TextStyle(
@@ -50,7 +50,6 @@ class JoinPage extends StatelessWidget {
         children: [
         Container(
           width : 300,
-          height : 50,
           child : CustomTextFormField(
           hint: "Student Number",
           funValidator: validateStudentNumber(),
@@ -58,7 +57,6 @@ class JoinPage extends StatelessWidget {
         ),
           Container(
             width : 300,
-            height: 50,
             child : CustomTextFormField(
             hint: "Password",
             funValidator: validatePassWord(),
@@ -66,7 +64,6 @@ class JoinPage extends StatelessWidget {
         ),
           Container(
             width: 300,
-            height: 50,
             child : CustomTextFormField(
             hint: "E-mail",
             funValidator: validateEmail(),
@@ -74,7 +71,6 @@ class JoinPage extends StatelessWidget {
           ),
           Container(
             width: 300,
-            height: 50,
             child : CustomTextFormField(
             hint: "Phone Number",
             funValidator: validatePhone(),

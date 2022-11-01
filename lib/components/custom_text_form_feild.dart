@@ -35,6 +35,8 @@ class CustomTextFormField extends StatelessWidget {
           ? <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly]
           : <TextInputFormatter>[],
       decoration: InputDecoration(
+        isDense: true,
+        contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 10),
         hintText: "$hint",
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),

@@ -52,21 +52,19 @@ class LoginPage extends StatelessWidget {
       child: Column(
         children: [
             Container(
-              width:300,
-              height: 50,
-            child : CustomTextFormField(
+              width: 300,
+              child : CustomTextFormField(
               hint: "Student Number", //텍스트 정렬 center
               funValidator: validateStudentNumber(),
             ),
             ),
-          Container(
-            width: 300,
-            height: 50,
-            child : CustomTextFormField(
+         Container(
+           width : 300,
+         child : CustomTextFormField(
             hint: "Password",
             funValidator: validatePassWord(),
           ),
-          ),
+         ),
           Container(
             width : 300,
             height : 40,

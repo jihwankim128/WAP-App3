@@ -9,13 +9,22 @@ class ListPage extends StatelessWidget {
       body: ListView.separated(
         itemCount: 10,
         itemBuilder: (context, index) {
-          return ListTile(
-            onTap: () {
-              Get.to(DetailPage(), arguments: "index");
-            },
-            title: Text("제목 1"),
-            leading: Text("1"),
-
+          return Container(
+            height: 80,
+              child: Row(
+                children: [
+                  Container(
+                    width: 50,
+                      alignment: Alignment.center,
+                      child: Text("$index", style: TextStyle(fontSize: 13)),
+                  ),
+                 Image(image: AssetImage("assets/images/bookcover.jpg")),
+                  Expanded(child: Container(
+                    padding: EdgeInsets.only(left: 10),
+                    child: Text("윈도우즈 API 정복", style: TextStyle(fontSize: 15),),
+                  ))
+                ],
+              ),
           );
         },
         separatorBuilder: (context, index) {

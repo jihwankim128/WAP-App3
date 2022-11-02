@@ -28,7 +28,6 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
-
             _LoinForm(),
             Container(
               width : 250,

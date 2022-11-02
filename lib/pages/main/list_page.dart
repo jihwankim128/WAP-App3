@@ -20,7 +20,7 @@ class ListPage extends StatelessWidget {
                   ),
                  Image(image: AssetImage("assets/images/bookcover.jpg")),
                   Expanded(child: Container(
-                    padding: EdgeInsets.only(left: 10),
+                    padding: EdgeInsets.only(left: 20),
                     child: Text("윈도우즈 API 정복", style: TextStyle(fontSize: 15),),
                   ))
                 ],

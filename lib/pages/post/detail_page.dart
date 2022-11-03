@@ -226,28 +226,20 @@ class _DetailPageState extends State<DetailPage> {
   final TextEditingController commentController = TextEditingController();
   List filedata = [
     {
-      'name': 'Adeleye Ayodeji',
+      'name': '이홍주1',
       'pic': 'https://picsum.photos/300/30',
-      'message': 'I love to code'
+      'message': '책 추천합니다~!'
     },
     {
-      'name': 'Biggi Man',
+      'name': '이홍주2',
       'pic': 'https://picsum.photos/300/30',
-      'message': 'Very cool'
-    },
-    {
-      'name': 'Biggi Man',
-      'pic': 'https://picsum.photos/300/30',
-      'message': 'Very cool'
-    },
-    {
-      'name': 'Biggi Man',
-      'pic': 'https://picsum.photos/300/30',
-      'message': 'Very cool'
+      'message': '김치찌개 묻어있음. 근데 내용은 good'
     },
   ];
   Widget commentChild(data) {
     return ListView(
+      scrollDirection: Axis.vertical,
+      shrinkWrap: true,
       children: [
         for (var i = 0; i < data.length; i++)
           Padding(
@@ -284,7 +276,7 @@ class _DetailPageState extends State<DetailPage> {
     return Container(
       child: CommentBox(
         userImage:
-        "https://lh3.googleusercontent.com/a-/AOh14GjRHcaendrf6gU5fPIVd8GIl1OgblrMMvGUoCBj4g=s400",
+            "https://lh3.googleusercontent.com/a-/AOh14GjRHcaendrf6gU5fPIVd8GIl1OgblrMMvGUoCBj4g=s400",
         child: commentChild(filedata),
         labelText: 'Write a comment...',
         withBorder: false,
@@ -296,7 +288,7 @@ class _DetailPageState extends State<DetailPage> {
               var value = {
                 'name': 'New User',
                 'pic':
-                'https://lh3.googleusercontent.com/a-/AOh14GjRHcaendrf6gU5fPIVd8GIl1OgblrMMvGUoCBj4g=s400',
+                    'https://lh3.googleusercontent.com/a-/AOh14GjRHcaendrf6gU5fPIVd8GIl1OgblrMMvGUoCBj4g=s400',
                 'message': commentController.text
               };
               filedata.insert(0, value);
@@ -314,29 +306,34 @@ class _DetailPageState extends State<DetailPage> {
         sendWidget: Icon(Icons.send_sharp, size: 30, color: Colors.white),
       ),
     );
-}
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("도서 상세 정보"),
+      ),
       body: Column(
         children: [
-          /*Image.asset("assets/images/bookcover.jpg")*/
-          Image.asset('assets/images/book.jpg',width: 150,),
+          Image.asset(
+            'assets/images/bookcover.jpg',
+            width: 140,
+          ),
           Padding(padding: EdgeInsets.all(3)),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                width: MediaQuery.of(context).size.width*0.8,
+                width: MediaQuery.of(context).size.width * 0.8,
                 padding: EdgeInsets.all(10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                       child: Text(
-                        '책 제목',
+                        '윈도우즈 API 정복 1',
                         style: TextStyle(
                           fontSize: 23,
                           fontWeight: FontWeight.bold,
@@ -344,14 +341,14 @@ class _DetailPageState extends State<DetailPage> {
                       ),
                     ),
                     Text(
-                      '책 제목 1',
-                      style: TextStyle(fontSize: 18, color: Colors.grey),
+                      '김상형, 2006년, 1116쪽',
+                      style: TextStyle(fontSize: 14, color: Colors.grey),
                     )
                   ],
                 ),
               ),
               Container(
-                width: MediaQuery.of(context).size.width*0.15,
+                width: MediaQuery.of(context).size.width * 0.15,
                 padding: EdgeInsets.all(10),
                 child: Center(
                   child: Icon(
@@ -359,13 +356,15 @@ class _DetailPageState extends State<DetailPage> {
                     color: Colors.red,
                   ),
                 ),
-              )
+              ),
             ],
           ),
-
-        ],
+          Column(
+            children : [Text('book review', style: TextStyle(fontSize: 10, color: Colors.black26)),
+              commentChild(filedata)],
+          ),
+    ],
       ),
     );
   }
-
 }

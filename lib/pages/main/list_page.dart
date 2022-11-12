@@ -11,21 +11,26 @@ class ListPage extends StatelessWidget {
         itemBuilder: (context, index) {
           return Container(
             height: 80,
-              child: Row(
-                children: [
-                  Container(
-                    width: 50,
-                      alignment: Alignment.center,
-                      child: Text("$index", style: TextStyle(fontSize: 13)),
+              child: GestureDetector(
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 50,
+                          alignment: Alignment.center,
+                          child: Text("$index", style: TextStyle(fontSize: 13)),
+                        ),
+                        Image(image: AssetImage("assets/images/bookcover.jpg")),
+                        Expanded(child: Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Text("윈도우즈 API 정복 1", style: TextStyle(fontSize: 15),),
+                        )),
+                      ],
+                    ),
+                    onTap:() {
+                      Get.to(DetailPage());
+                    },
                   ),
-                 Image(image: AssetImage("assets/images/bookcover.jpg")),
-                  Expanded(child: Container(
-                    padding: EdgeInsets.only(left: 20),
-                    child: Text("윈도우즈 API 정복", style: TextStyle(fontSize: 15),),
-                  ))
-                ],
-              ),
-          );
+              );
         },
         separatorBuilder: (context, index) {
           return Divider();
